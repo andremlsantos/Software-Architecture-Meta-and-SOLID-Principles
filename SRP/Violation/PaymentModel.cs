@@ -2,12 +2,27 @@
 
 namespace SOLID.SRP.Violation
 {
+    /*
+     * Lets suppose this projects is a web app, that allows users to buy tickets on trains
+     * Works on a website and on the point of service terminals
+     * MVVM application
+     *
+     * PaymentModel provides the ability to buy a ticket
+     */
     public class PaymentModel
     {
         private decimal _cashAccepted;
 
-        public void BuyTicket(TicketDetails ticket, 
-                              PaymentDetails payment, Action onPayChangeToMobilePhone)
+        /*
+         * Whats the problem here?
+         * Pay by credit card or by cash are coupled
+         *
+         * PaymentModel depends on TicketDetails, PaymentDetails and ProcessingCenterGateway
+         * It knows too much
+         */
+        public void BuyTicket(TicketDetails ticket,
+                              PaymentDetails payment,
+                              Action onPayChangeToMobilePhone)
         {
             if (payment.Method == PaymentMethod.CreditCard)
             {
@@ -29,7 +44,7 @@ namespace SOLID.SRP.Violation
         private void AcceptCash(TicketDetails ticket)
         {
             var r = new Random();
-            _cashAccepted = r.Next((int) ticket.Price, (int) ticket.Price + 1000);
+            _cashAccepted = r.Next((int)ticket.Price, (int)ticket.Price + 1000);
         }
 
         private void DispenseChange(TicketDetails ticket, Action onPayChangeToMobilePhone)
