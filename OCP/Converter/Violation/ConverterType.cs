@@ -1,4 +1,4 @@
-﻿namespace SOLID.OCP.Converter
+﻿namespace SOLID.OCP.Converter.Violation
 {
     enum ConverterType
     {

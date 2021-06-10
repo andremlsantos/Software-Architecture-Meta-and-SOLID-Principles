@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Policy;
 
-namespace SOLID.OCP.Converter
+namespace SOLID.OCP.Converter.Violation
 {
     /*
      * The DocumentExporter class is not closed to change
@@ -31,7 +31,7 @@ namespace SOLID.OCP.Converter
 
             switch (Type)
             {
-                case Converter.ConverterType.XMLConverterType:
+                case ConverterType.XMLConverterType:
                     {
                         XMLConverter xmlConverter = new XMLConverter();
                         String xmlFileContent = xmlConverter.ConvertDocumentToXML(doc);
@@ -39,7 +39,7 @@ namespace SOLID.OCP.Converter
                         break;
                     }
 
-                case Converter.ConverterType.BinaryConverterType:
+                case ConverterType.BinaryConverterType:
                     {
                         BinaryConverter binaryConverter = new BinaryConverter();
                         String binaryFileContent = binaryConverter.ConvertDocumentToBinary(doc);

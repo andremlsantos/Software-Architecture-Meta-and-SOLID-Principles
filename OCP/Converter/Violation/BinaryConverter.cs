@@ -1,6 +1,6 @@
 ﻿using System.Security.Policy;
 
-namespace SOLID.OCP.Converter
+namespace SOLID.OCP.Converter.Violation
 {
     public class BinaryConverter
     {

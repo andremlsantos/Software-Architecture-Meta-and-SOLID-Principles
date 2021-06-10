@@ -70,11 +70,11 @@
     <Compile Include="Monads\Maybe.cs" />
     <Compile Include="Monads\Result.cs" />
     <Compile Include="Monads\ResultExtensions.cs" />
-    <Compile Include="OCP\Converter\BinaryConverter.cs" />
-    <Compile Include="OCP\Converter\ConverterType.cs" />
-    <Compile Include="OCP\Converter\Document.cs" />
-    <Compile Include="OCP\Converter\DocumentExporter.cs" />
-    <Compile Include="OCP\Converter\XMLConverter.cs" />
+    <Compile Include="OCP\Converter\Violation\BinaryConverter.cs" />
+    <Compile Include="OCP\Converter\Violation\ConverterType.cs" />
+    <Compile Include="OCP\Converter\Violation\Document.cs" />
+    <Compile Include="OCP\Converter\Violation\DocumentExporter.cs" />
+    <Compile Include="OCP\Converter\Violation\XMLConverter.cs" />
     <Compile Include="OCP\DeviceModel.cs" />
     <Compile Include="OCP\Refactored\BillDispenserEcdm.cs" />
     <Compile Include="OCP\Refactored\Client.cs" />
