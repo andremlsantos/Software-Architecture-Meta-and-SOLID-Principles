@@ -2,9 +2,14 @@
 using System.IO.Ports;
 
 namespace SOLID.OCP.Violation
-{   
+{
     public class DeviceFinder
     {
+        /*
+         * The problem is not the number of lines
+         * If a new device appears, we will be forced to update this method
+         * Violation from Martin = in a case of adding a new device, the backward compatibility still works, so does not violate meyers
+         */
         public string FindDevice(DeviceModel model)
         {
             SerialPort port = new SerialPort();
@@ -22,41 +27,41 @@ namespace SOLID.OCP.Violation
                         port.BaudRate = 4800;
                         port.Parity = Parity.Mark;
                         port.Handshake = Handshake.RequestToSendXOnXOff;
-                        return Find(port);                        
-                    }              
+                        return Find(port);
+                    }
                 case DeviceModel.CoinAccepterNri:
                     {
                         port.BaudRate = 19200;
                         port.Parity = Parity.Odd;
                         port.Handshake = Handshake.XOnXOff;
-                        return Find(port);                        
+                        return Find(port);
                     }
                 case DeviceModel.CoinDispenserCube4:
                     {
                         port.BaudRate = 9600;
                         port.Parity = Parity.Space;
                         port.Handshake = Handshake.None;
-                        return Find(port);                        
+                        return Find(port);
                     }
                 case DeviceModel.CoinDispsenerSch2:
                     {
                         port.BaudRate = 4800;
                         port.Parity = Parity.Even;
                         port.Handshake = Handshake.None;
-                        return Find(port);                        
+                        return Find(port);
                     }
                 default:
                     throw new ArgumentException($"Unknown model: {model}.");
-            }            
+            }
         }
 
         private string Find(SerialPort port)
         {
             string[] names = SerialPort.GetPortNames();
-            foreach(string name in names)
+            foreach (string name in names)
             {
                 port.Write("special code");
-                if (port.ReadByte() == 0 )
+                if (port.ReadByte() == 0)
                     return name;
             }
             return null;
