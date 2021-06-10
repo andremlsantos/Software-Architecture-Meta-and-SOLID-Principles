@@ -17,7 +17,7 @@ namespace SOLID.OCP.Refactored
         public SerialPort Port { get; }
 
         public string Find()
-        {            
+        {
             foreach (string portName in SerialPort.GetPortNames())
             {
                 //test if device is can be connected

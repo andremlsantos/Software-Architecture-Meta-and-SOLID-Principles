@@ -70,6 +70,11 @@
     <Compile Include="Monads\Maybe.cs" />
     <Compile Include="Monads\Result.cs" />
     <Compile Include="Monads\ResultExtensions.cs" />
+    <Compile Include="OCP\Converter\BinaryConverter.cs" />
+    <Compile Include="OCP\Converter\ConverterType.cs" />
+    <Compile Include="OCP\Converter\Document.cs" />
+    <Compile Include="OCP\Converter\DocumentExporter.cs" />
+    <Compile Include="OCP\Converter\XMLConverter.cs" />
     <Compile Include="OCP\DeviceModel.cs" />
     <Compile Include="OCP\Refactored\BillDispenserEcdm.cs" />
     <Compile Include="OCP\Refactored\Client.cs" />
@@ -105,6 +110,7 @@
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.2.0.7\build\dotnet\Fody.targets" Condition="Exists('packages\Fody.2.0.7\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
