@@ -25,9 +25,10 @@ namespace SOLID.ISP.Config
         string ServerIP { get; set; }
         string ServerPort { get; set; }
         int LoggingSwitch { get; set; }
-        int AppSkinId { get; set; }        
+        int AppSkinId { get; set; }
     }
 
+    // tambemn podemos falar em SRP para esta estrutura
     public interface IReportsConfig
     {
         decimal Income { get; set; }
@@ -39,7 +40,7 @@ namespace SOLID.ISP.Config
     public class AppConfig : IAppConfig, IReportsConfig
     {
         private AppConfig()
-        {            
+        {
         }
 
         [DataMember(IsRequired = true)]
@@ -72,8 +73,8 @@ namespace SOLID.ISP.Config
         {
             using (Stream s = File.OpenRead("config.xml"))
             {
-                Config = (AppConfig) new DataContractSerializer(typeof(AppConfig)).ReadObject(s);
-            }            
+                Config = (AppConfig)new DataContractSerializer(typeof(AppConfig)).ReadObject(s);
+            }
         }
     }
 }

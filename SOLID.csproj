@@ -70,6 +70,10 @@
     <Compile Include="Monads\Maybe.cs" />
     <Compile Include="Monads\Result.cs" />
     <Compile Include="Monads\ResultExtensions.cs" />
+    <Compile Include="OCP\Converter\Refractored\BinaryConverter.cs" />
+    <Compile Include="OCP\Converter\Refractored\Converter.cs" />
+    <Compile Include="OCP\Converter\Refractored\DocumentExplorer.cs" />
+    <Compile Include="OCP\Converter\Refractored\XMLConverter.cs" />
     <Compile Include="OCP\Converter\Violation\BinaryConverter.cs" />
     <Compile Include="OCP\Converter\Violation\ConverterType.cs" />
     <Compile Include="OCP\Converter\Violation\Document.cs" />

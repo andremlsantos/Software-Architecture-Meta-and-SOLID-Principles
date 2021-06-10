@@ -9,10 +9,11 @@ namespace SOLID.UnitTests
         [Test]
         public void Generate_ValidInput_GeneratesReport()
         {
+            // antes tinhamos propriedades aqui, nao relacionadas ao report, que tinhamos de instaciar para usar o teste
             IReportsConfig appConfig = new TestableReportsAppConfig()
             {
                 Income = 10,
-                Outcome = 100,              
+                Outcome = 100,
                 TotalRevenue = 1000
             };
 
